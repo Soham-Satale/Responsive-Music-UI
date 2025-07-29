@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music Player UI</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+<body id="body" class="bg-gray-900 text-white min-h-screen flex items-center justify-center">
+
+  <div class="bg-gray-950 text-white p-6 rounded-2xl shadow-2xl w-full max-w-md text-center space-y-5">
+    <img id="cover" src="assets/img/cover1.jpg" alt="cover" class="mx-auto rounded-xl h-48 w-48 object-cover" />
+    <h2 id="title" class="text-xl font-semibold">Song Title</h2>
+    <p id="artist" class="text-gray-400">Auto Mode</p>
+
+    <audio id="audio"></audio>
+
+    <!-- Progress Bar -->
+    <input type="range" id="progress" value="0" class="w-full accent-green-400 mt-10" />
+
+    <!-- Controls -->
+    <div class="flex justify-around items-center">
+      <button id="prev" class="text-4xl text-white hover:text-green-400">&larr;</button>
+      <button id="playPause" class="text-white hover:text-green-400"></button>
+      <button id="next" class="text-4xl text-white hover:text-green-400">&rarr;</button>
+    </div>
+
+    <!-- Volume -->
+    <div class="flex items-center gap-2 mt-2">
+      <label for="volume" class="text-sm">Volume</label>
+      <input type="range" id="volume" min="0" max="1" step="0.01" value="1" class="flex-1 accent-green-400" />
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <button id="toggleMode" class="mt-4 px-4 py-2 rounded-full bg-white text-black font-medium hover:scale-105 transition">
+      Toggle Dark Mode
+    </button>
+  </div>
+
+  <!-- Your Script -->
+  <script src="script.js"></script>
+</body>
+</html>
